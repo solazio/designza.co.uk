@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Designza Ltd`,
+    title: `Designza`,
     description: `Coming soon.`,
-    author: `Ovidiu Suciu`,
+    author: `@ovi_dius`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
