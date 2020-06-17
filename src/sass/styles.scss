@@ -1,0 +1,145 @@
+// // Import the framework
+@import "node_modules/vanilla-framework/scss/vanilla";
+
+// // color variables
+// $color-primary: #71d3b0;
+// $color-secondary: #db519d;
+// $color-accent: #b1b1b1;
+// $color-background: #080808; // dark #1c1c1c
+// $color-light: #f7f7f7;
+
+// // Include vanilla patterns
+// @include vf-base;
+// @include vf-p-grid;
+// @include vf-p-icons;
+
+// @import "footer";
+// @include footer;
+
+// @import "link";
+// @include link;
+
+// color variables
+$color-background: #080808;
+$color-light: #f7f7f7;
+$color-mid-x-light: #e5e5e5;
+
+$breakpoint-medium: 772px;
+$breakpoint-large: 1036px;
+$breakpoint-x-large: 1681px;
+
+@include vf-base;
+@include vf-u-layout;
+@include vf-p-grid;
+@include vf-p-strip;
+@include vf-u-hide;
+
+// Include vanilla patterns
+@import "navigation";
+@include navigation;
+
+@import "p-strip";
+@include p-strip;
+
+// https://fonts.google.com/specimen/Poppins
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,300,500");
+
+html {
+  background-color: $color-background;
+  color: $color-light;
+  font-family: "Poppins", Helvetica, sans-serif;
+  // font-family:  Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  // text-transform: uppercase;
+}
+
+// .is-dark {
+//   color: $color-light;
+// }
+
+// root settings / variables
+$app-hide-overflow: true; // set to false to see everything that's going on
+
+$app-width: 80rem;
+$app-aspect: 0.562;
+
+// .app {
+//   $app-height: $app-width / $app-aspect;
+//   $app-border-width-v: $app-height / 6;
+//   $app-border-width-h: $app-width / 11;
+//   $app-border-width: $app-border-width-v $app-border-width-h;
+
+//   position: relative;
+//   background: #fff;
+//   flex: 0 0 auto;
+//   width: $app-width;
+//   height: $app-height;
+//   margin: 5px;
+
+//   @if $app-hide-overflow {
+//     overflow: hidden;
+//   }
+// }
+
+.u-fixed-width {
+  max-width: $app-width;
+}
+
+.p-title--highlighted {
+  // background-color: rgba($color: #c4c4c4, $alpha: 0.1);
+  padding-inline-end: 0.5rem;
+  position: relative;
+  &::after {
+    background-color: white;
+    content: "";
+    right: 0;
+    width: 2px;
+    bottom: 0.5rem;
+    top: 0.75rem;
+    position: absolute;
+    animation: blink-blink 1s 0s infinite;
+  }
+
+    @keyframes blink-blink {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+.p-strip__title {
+  max-width: $app-width/2;
+}
+// .section-intro {
+//   max-width: $app-width;
+//   margin: 0 auto;
+//   padding: 10rem 5rem 2rem 2rem;
+
+//   .section-intro__title {
+//     max-width: $app-width/2;
+//     text-transform: uppercase;
+//   }
+
+//   @media screen and(max-width: $breakpoint-medium){
+//     margin-left: 1rem;
+//     margin-right: 1rem;
+//   }
+// }
+
+// .is-thin {
+//   font-weight: 100;
+// }
+
+a:focus {
+  outline: none;
+}

@@ -7,23 +7,29 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
+import { useStaticQuery, graphql } from "gatsby"
 
-import "./layout.css"
+import Header from "./header"
+import Footer from "./footer"
+
+import "../sass/styles.scss"
 
 const Layout = ({ children }) => {
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+
   return (
     <>
-      <Helmet>
-        <link
-          href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap"
-          rel="stylesheet"
-        />
-      </Helmet>
-      <div className="temp-layout">
-        <main>{children}</main>
-        <footer>© {new Date().getFullYear()} Designza Ltd</footer>
-      </div>
+      <Header siteTitle={data.site.siteMetadata.title} />
+      <main>{children}</main>
+      <Footer />
     </>
   )
 }
@@ -33,3 +39,4 @@ Layout.propTypes = {
 }
 
 export default Layout
+

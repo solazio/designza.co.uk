@@ -1,0 +1,42 @@
+@mixin footer {
+  .p-footer {
+    background-color: $color-background;
+    border-top: 1px solid $color-primary;
+    font-size: small;
+    padding: $spv-outer--shallow-scaleable 0;
+
+    &.is-dark {
+      color: $color-light;
+    }
+
+    .p-footer--left {
+      justify-content: flex-start;
+      text-align: left;
+    }
+
+    .p-footer--center {
+      justify-content: center;
+      text-align: center;
+
+      @media screen and(max-width: $breakpoint-medium) {
+        justify-content: flex-start;
+        padding-bottom: $spv-inner--small;
+        text-align: left;
+      }
+    }
+
+    .p-footer--right {
+      display: flex;
+      justify-content: flex-end;
+
+      a {
+        display: flex;
+        align-content: center;
+
+        &:not(:last-of-type) {
+          margin-right: $spv-inner--large;
+        }
+      }
+    }
+  }
+}

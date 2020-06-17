@@ -1,0 +1,88 @@
+@mixin p-strip {
+  .p-strip-main {
+    @extend %vf-strip;
+
+    align-items: center;
+    display: flex;
+    height: 90vh;
+    padding: 0;
+
+    .background-line {
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      top: 80%;
+      left: 0;
+      background: rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 10vh;
+        left: 110%;
+        background: linear-gradient(
+          to left,
+          rgba(255, 255, 255, 0) 0%,
+          #ffffff 75%,
+          #ffffff 100%
+        );
+        animation: line-run 10s 0s infinite;
+        animation-fill-mode: backwards;
+        animation-timing-function: cubic-bezier(0, 0.97, 0.4, 0.8);
+      }
+    }
+  }
+
+  @keyframes line-run {
+    0% {
+      left: 110%;
+    }
+    100% {
+      left: -50%;
+    }
+  }
+
+  .p-strip--light {
+    @extend %vf-strip;
+
+    color: $color-background;
+  }
+
+  [class*="p-strip"].is-slanted--top-right,
+  [class*="p-strip"].is-slanted--top-left {
+    padding-block-start: 8rem;
+    &::before {
+      top: 0;
+      background-image: linear-gradient(
+        to bottom right,
+        $color-background 0%,
+        $color-background 49%,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      content: "";
+      display: block;
+      height: 4rem;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+    }
+  }
+
+  [class*="p-strip"].is-slanted--top-right {
+    &::before {
+      background-image: linear-gradient(
+        to bottom right,
+        $color-background 0%,
+        $color-background 49%,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+  }
+}
+
