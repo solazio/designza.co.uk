@@ -20,15 +20,10 @@ const Header = ({ siteTitle }) => {
     <header id="navigation" className="p-navigation">
       <div className="p-navigation__row">
         <div className="p-navigation__banner">
-          <div className="p-navigation__logo">
-            <img
-              className="p-navigation__image"
-              src={data.placeholderImage.childImageSharp.fluid.src}
-              alt=""
-              width="175"
-              height="45.5"
-            />
-          </div>
+          <a className="p-navigation__logo">
+            <i className="p-icon--designza"></i>
+            <span>esignza</span>
+          </a>
           <div
             className={
               isOpen ? "p-navigation__toggle is-open" : "p-navigation__toggle"

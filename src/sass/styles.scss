@@ -85,6 +85,8 @@ $app-aspect: 0.562;
 //   }
 // }
 
+
+
 .u-fixed-width {
   max-width: $app-width;
 }
@@ -104,7 +106,7 @@ $app-aspect: 0.562;
     animation: blink-blink 1s 0s infinite;
   }
 
-    @keyframes blink-blink {
+  @keyframes blink-blink {
     0% {
       opacity: 0;
     }
