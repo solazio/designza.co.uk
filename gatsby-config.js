@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Designza - we build websites`,
+    title: `Designza - we build websites and apps`,
     description: `Coming soon.`,
     author: `@ovi_dius`,
   },

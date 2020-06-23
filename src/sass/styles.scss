@@ -2,8 +2,8 @@
 @import "node_modules/vanilla-framework/scss/vanilla";
 
 // // color variables
-// $color-primary: #71d3b0;
-// $color-secondary: #db519d;
+$color-primary: #00b5ff;
+$color-secondary: #ff00b5;
 // $color-accent: #b1b1b1;
 // $color-background: #080808; // dark #1c1c1c
 // $color-light: #f7f7f7;
@@ -85,42 +85,94 @@ $app-aspect: 0.562;
 //   }
 // }
 
-
-
 .u-fixed-width {
   max-width: $app-width;
 }
 
-.p-title--highlighted {
-  // background-color: rgba($color: #c4c4c4, $alpha: 0.1);
-  padding-inline-end: 0.5rem;
-  position: relative;
-  &::after {
-    background-color: white;
-    content: "";
-    right: 0;
-    width: 2px;
-    bottom: 0.5rem;
-    top: 0.75rem;
-    position: absolute;
-    animation: blink-blink 1s 0s infinite;
+// Homepage title
+.p-strip__title {
+  max-width: $app-width/2;
+
+  span:first-child {
+    display: inline-block;
+    margin-bottom: -10px;
   }
 
-  @keyframes blink-blink {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
+  @media screen and(max-width: 374px) {
+    br {
+      display: none;
     }
   }
 }
 
-.p-strip__title {
-  max-width: $app-width/2;
+.p-title__flip {
+  overflow: hidden;
+  display: inline-block;
+  height: 3rem;
+  padding-block-start: 4px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      height: 3rem;
+      display: block;
+      padding: 0 0 0 10px;
+      margin-block-end: 3rem;
+    }
+  }
+
+  @media screen and(min-width: 375px) and(max-width: $breakpoint-medium) {
+    padding-block-start: 11px;
+  }
+
+  @media screen and(max-width: 374px) {
+    display: block;
+    padding-block-start: 0;
+
+    ul > li {
+      padding-inline-start: 0;
+    }
+  }
+
+  .flip4 {
+    animation: flip4 10s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+  }
+
+  @keyframes flip4 {
+    0% {
+      margin-top: -24rem;
+    }
+    5% {
+      margin-top: -18rem;
+    }
+    25% {
+      margin-top: -18rem;
+    }
+    30% {
+      margin-top: -12rem;
+    }
+    50% {
+      margin-top: -12rem;
+    }
+    55% {
+      margin-top: -6rem;
+    }
+    75% {
+      margin-top: -6rem;
+    }
+    80% {
+      margin-top: 0;
+    }
+    99.99% {
+      margin-top: 0;
+    }
+    100% {
+      margin-top: -18rem;
+    }
+  }
 }
 // .section-intro {
 //   max-width: $app-width;

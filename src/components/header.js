@@ -1,19 +1,7 @@
 import PropTypes from "prop-types"
 import React, { useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
 
-const Header = ({ siteTitle }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "designza-logo.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 350) {
-            src
-          }
-        }
-      }
-    }
-  `)
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -25,9 +13,7 @@ const Header = ({ siteTitle }) => {
             <span>esignza</span>
           </a>
           <div
-            className={
-              isOpen ? "p-navigation__toggle is-open" : "p-navigation__toggle"
-            }
+            className="p-navigation__toggle"
             onClick={() => setIsOpen(!isOpen)}
           >
             <div className="p-navigation__bar" />
@@ -35,7 +21,11 @@ const Header = ({ siteTitle }) => {
             <div className="p-navigation__bar" />
           </div>
         </div>
-        <nav className="p-navigation__nav">
+        <nav
+          className={
+            isOpen ? "p-navigation__nav is-open" : "p-navigation__nav"
+          }
+        >
           <span className="u-off-screen">
             <a href="#main-content">Jump to main content</a>
           </span>

@@ -8,13 +8,13 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <div className="p-strip-main">
+      <section className="p-strip-main">
         <div className="u-fixed-width">
           <Title />
           {/* <div className="background-line"></div> */}
         </div>
-      </div>
-      <div className="p-strip--light is-slanted--top-right">
+      </section>
+      <section className="p-strip--light is-slanted--top-right">
         <div className="u-fixed-width">
           <h2 className="p-heading--4">
             Weather you need a website for your business, a personal blog or an
@@ -29,7 +29,7 @@ const IndexPage = () => {
             efficiency and tiny footprint.
           </p>
         </div>
-      </div>
+      </section>
     </Layout>
   )
 }
