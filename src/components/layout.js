@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Helmet>
-         <!-- Global site tag (gtag.js) - Google Analytics -->
+       {/* Global site tag (gtag.js) - Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177265972-1"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
