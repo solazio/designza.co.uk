@@ -9,7 +9,7 @@ module.exports = {
       resolve: `gatsby-plugin-gtag`,
       options: {
         trackingId: "UA-177265972-1",
-        head: false,
+        head: true,
       },
     },
     `gatsby-plugin-react-helmet`,
