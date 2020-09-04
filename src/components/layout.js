@@ -15,6 +15,15 @@ const Layout = ({ children }) => {
   return (
     <>
       <Helmet>
+         <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177265972-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-177265972-1');
+        </script>
         <link
           href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap"
           rel="stylesheet"
