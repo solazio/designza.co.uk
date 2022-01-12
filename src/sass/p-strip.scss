@@ -47,4 +47,16 @@
       );
     }
   }
+
+  [class*="p-strip"].is-slanted--top-left {
+    &::before {
+      background-image: linear-gradient(
+        to bottom left,
+        $color-background 0%,
+        $color-background 49%,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+  }
 }
